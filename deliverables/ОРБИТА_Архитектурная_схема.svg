@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <style>
+      .title { font: 700 38px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 20px Arial, sans-serif; fill: #475569; }
+      .box-title { font: 700 23px Arial, sans-serif; fill: #0f172a; }
+      .body { font: 400 18px Arial, sans-serif; fill: #334155; }
+      .small { font: 400 16px Arial, sans-serif; fill: #475569; }
+      .box { fill: #ffffff; stroke: #94a3b8; stroke-width: 2; rx: 18; }
+      .core { fill: #eff6ff; stroke: #2563eb; stroke-width: 3; rx: 18; }
+      .server { fill: #f0fdf4; stroke: #16a34a; stroke-width: 3; rx: 18; }
+      .data { fill: #fff7ed; stroke: #ea580c; stroke-width: 3; rx: 18; }
+      .arrow { stroke: #475569; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+      .dashed { stroke-dasharray: 10 8; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#f8fafc"/>
+  <text x="800" y="62" text-anchor="middle" class="title">Архитектура ОРБИТЫ 3.0.0</text>
+  <text x="800" y="96" text-anchor="middle" class="subtitle">Единое расчётное ядро, серверные процессы и веб-интерфейс</text>
+
+  <rect x="60" y="155" width="300" height="190" class="data"/>
+  <text x="210" y="200" text-anchor="middle" class="box-title">Источники данных</text>
+  <text x="90" y="240" class="body">• data/dataset.xlsx</text>
+  <text x="90" y="275" class="body">• config/planner.yaml</text>
+  <text x="90" y="310" class="body">• config/aliases.yaml</text>
+
+  <rect x="455" y="135" width="690" height="545" class="core"/>
+  <text x="800" y="185" text-anchor="middle" class="box-title">Расчётное ядро src</text>
+
+  <rect x="495" y="220" width="290" height="150" class="box"/>
+  <text x="640" y="258" text-anchor="middle" class="box-title">Вход</text>
+  <text x="520" y="295" class="body">Импорт и нормализация</text>
+  <text x="520" y="325" class="body">Проверка качества</text>
+  <text x="520" y="355" class="body">PlanningState</text>
+
+  <rect x="815" y="220" width="290" height="150" class="box"/>
+  <text x="960" y="258" text-anchor="middle" class="box-title">Планирование</text>
+  <text x="840" y="295" class="body">Предпроверка и greedy</text>
+  <text x="840" y="325" class="body">MILP и HiGHS</text>
+  <text x="840" y="355" class="body">Прогноз 12 спринтов</text>
+
+  <rect x="495" y="410" width="290" height="205" class="box"/>
+  <text x="640" y="448" text-anchor="middle" class="box-title">Контроль</text>
+  <text x="520" y="485" class="body">Независимый валидатор</text>
+  <text x="520" y="515" class="body">Причины и контрфакты</text>
+  <text x="520" y="545" class="body">Неизменяемая база</text>
+  <text x="520" y="575" class="body">Пересчёт и метрики</text>
+
+  <rect x="815" y="410" width="290" height="205" class="box"/>
+  <text x="960" y="448" text-anchor="middle" class="box-title">Аналитика</text>
+  <text x="840" y="485" class="body">Красный риск</text>
+  <text x="840" y="515" class="body">Жёлтый риск</text>
+  <text x="840" y="545" class="body">Оранжевый риск</text>
+  <text x="840" y="575" class="body">Bus Factor и DBSCAN</text>
+
+  <rect x="1240" y="155" width="300" height="190" class="server"/>
+  <text x="1390" y="200" text-anchor="middle" class="box-title">Сервер ОРБИТА</text>
+  <text x="1270" y="240" class="body">Адаптер и кэш</text>
+  <text x="1270" y="275" class="body">Права и согласования</text>
+  <text x="1270" y="310" class="body">Распределение людей</text>
+
+  <rect x="1240" y="420" width="300" height="205" class="server"/>
+  <text x="1390" y="462" text-anchor="middle" class="box-title">Хранилище</text>
+  <text x="1270" y="500" class="body">SQLite и версии</text>
+  <text x="1270" y="535" class="body">Пользователи и сессии</text>
+  <text x="1270" y="570" class="body">Baseline и архив факта</text>
+  <text x="1270" y="605" class="body">Контроль revision</text>
+
+  <rect x="455" y="785" width="690" height="145" class="server"/>
+  <text x="800" y="828" text-anchor="middle" class="box-title">Веб-интерфейс orbit/static</text>
+  <text x="800" y="868" text-anchor="middle" class="body">План • риски • задачи • факт • согласования • звёздная карта • CSV</text>
+  <text x="800" y="902" text-anchor="middle" class="small">HTML, CSS и JavaScript без сборщика</text>
+
+  <path d="M360 250 L455 250" class="arrow"/>
+  <path d="M785 295 L815 295" class="arrow"/>
+  <path d="M960 370 L960 410" class="arrow"/>
+  <path d="M815 510 L785 510" class="arrow"/>
+  <path d="M1145 250 L1240 250" class="arrow"/>
+  <path d="M1240 550 L1145 550" class="arrow dashed"/>
+  <path d="M1390 345 L1390 420" class="arrow"/>
+  <path d="M1390 625 L1390 730 L1040 730 L1040 785" class="arrow"/>
+  <path d="M560 785 L560 680" class="arrow dashed"/>
+
+  <text x="800" y="972" text-anchor="middle" class="small">Расчётные решения формирует только src; сервер управляет состоянием и доступом, интерфейс отображает результат</text>
+</svg>

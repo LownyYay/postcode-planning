@@ -1,0 +1,13 @@
+.venv/
+.vscode/
+__pycache__/
+.pytest_cache/
+*.pyc
+.DS_Store
+
+# Промежуточные файлы сборки документа и разбора PDF
+build/docx_qa*/
+tmp/
+
+# Локальные данные сервера (база, пароли жюри)
+orbit/var/

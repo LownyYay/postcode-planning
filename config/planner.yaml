@@ -1,0 +1,44 @@
+# Параметры планировщика. Отсутствующий ключ берёт значение по умолчанию
+# из src/planner/config.py. Обоснование — раздел «Принятые решения» в README.
+#
+# input — параметры, которые меняют входные числа: очки задач, ёмкости, фонды, rung.
+# solve — правила выбора плана; их можно менять без пересборки входа.
+
+input:
+  # Очки задач в работе: by_hours — доля оценки по остатку часов, full — вся оценка.
+  inprogress_sp: by_hours
+  # Множитель ёмкости команд для сценариев просадки.
+  capacity_scale: 1.0
+  focus_factor: 0.8
+  hours_per_sprint: 80
+  initiative_rung: max
+  # Горизонт прогноза и длина квартала в спринтах.
+  quarter_sprints: 6
+  horizon_sprints: 12
+
+solve:
+  # Движок: milp — точная модель, greedy — жадный план.
+  engine: milp
+  solver: highs
+  # Страховочный лимит на весь расчёт, секунды.
+  safety_time_limit: 120
+  objective_mode: count_first
+  # Откуда берутся часы роли: team — своя команда,
+  # team_borrow — вся организация с учётом заимствований, global — вся организация.
+  role_pool: team_borrow
+  # Роли без единого носителя: external — не ограничивают план и выводятся риском,
+  # block — задачи с такими ролями отменяются.
+  missing_roles: external
+  shared_split: fixed
+  # Пустых спринтов между блокирующей и блокируемой задачей:
+  # gap_planned — если блокирующая только запланирована, gap_done — если уже Done.
+  gap_planned: 1
+  gap_done: 0
+  # Минимальная доля работы в каждом активном спринте задачи.
+  min_progress: 0.1
+  inprogress_must_finish: false
+  # Контрфакты для отложенных задач и незавершённых инициатив:
+  # не больше counterfactual_limit решений за counterfactual_time_limit секунд.
+  counterfactuals: true
+  counterfactual_limit: 10
+  counterfactual_time_limit: 20

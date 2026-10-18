@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+var/
+.env
+*.db
+*.db-shm
+*.db-wal
+# Снимок для проверки интерфейса, создаётся scripts/ui_fixture.py
+ui-fixtures.json

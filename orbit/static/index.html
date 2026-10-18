@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Орбита — планы и команды</title>
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div id="app"><div class="loading">Загружаем Орбиту…</div></div>
+  <dialog id="drawer" aria-label="Подробности"></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <input type="file" id="csv-input" accept=".csv,text/csv" hidden>
+  <input type="file" id="dataset-input" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" hidden>
+</body>
+</html>

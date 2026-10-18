@@ -1,0 +1,9 @@
+pandas>=2.2,<4
+numpy>=1.26,<3
+openpyxl==3.1.5
+et-xmlfile==2.0.0
+PyYAML>=6,<7
+scikit-learn>=1.4,<2
+pulp==3.3.2
+highspy==1.15.1
+pytest>=8
